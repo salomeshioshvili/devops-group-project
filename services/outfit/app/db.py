@@ -84,7 +84,7 @@ def apply_migrations(connection_string: str) -> None:
 
 
 def create_repository() -> WearRepository:
-    connection_string = os.environ.get("DATABASE_URL")
+    connection_string = os.environ.get("DB_HOST")
     if not connection_string:
         return MemoryWearRepository()
     if not os.environ.get("SKIP_MIGRATIONS"):
